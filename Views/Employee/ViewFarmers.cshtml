@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AgriConnect.Models.FarmerProfile>
+
+<h2>All Registered Farmers</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Farmer Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var farmer in Model)
+        {
+            <tr>
+                <td>@farmer.User.FullName</td>
+                <td>
+                    <a asp-action="ViewFarmerProducts" asp-route-farmerId="@farmer.Id" class="btn btn-primary">
+                        View Products
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

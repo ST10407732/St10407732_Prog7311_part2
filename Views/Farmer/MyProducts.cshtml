@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AgriConnect.Models.Product>
+
+<h2>My Products</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+           @*  <th>Quantity</th> *@
+            <th>Production Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+              @*   <td>@product.Quantity</td> *@
+                <td>@product.ProductionDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
