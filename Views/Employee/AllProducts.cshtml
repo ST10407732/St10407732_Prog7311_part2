@@ -1,35 +1,37 @@
-﻿@model AgriConnect.ViewModels.ProductFilterViewModel
+﻿@model AgriConnect.ViewModels.ProductSearchViewModel
 
 @{
-    ViewData["Title"] = "Farmer Products";
+    ViewData["Title"] = "All Products";
 }
 
 <div class="container mt-5">
     <div class="card shadow-lg border-0 rounded-4">
         <div class="card-header bg-success text-white rounded-top-4">
-            <h3 class="mb-0"><i class="bi bi-boxes"></i> Products for @ViewBag.FarmerName</h3>
+            <h3 class="mb-0"><i class="bi bi-basket-fill"></i> All Products</h3>
         </div>
         <div class="card-body bg-light">
 
-            <form asp-action="ViewFarmerProducts" method="get" class="mb-4">
-                <input type="hidden" name="farmerId" value="@ViewBag.FarmerId" />
-
+            <form asp-action="AllProducts" method="get" class="mb-4">
                 <div class="row g-3">
                     <div class="col-md-3">
                         <label class="form-label fw-semibold">🌱 Product Type</label>
                         <input name="productType" class="form-control" value="@Model.ProductType" placeholder="e.g. Vegetables" />
                     </div>
                     <div class="col-md-3">
+                        <label class="form-label fw-semibold">👩‍🌾 Farmer Name</label>
+                        <input name="farmerName" class="form-control" value="@Model.FarmerName" placeholder="e.g. John" />
+                    </div>
+                    <div class="col-md-2">
                         <label class="form-label fw-semibold">📅 From Date</label>
                         <input name="fromDate" type="date" class="form-control" value="@Model.FromDate?.ToString("yyyy-MM-dd")" />
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label class="form-label fw-semibold">📅 To Date</label>
                         <input name="toDate" type="date" class="form-control" value="@Model.ToDate?.ToString("yyyy-MM-dd")" />
                     </div>
-                    <div class="col-md-3 align-self-end">
+                    <div class="col-md-2 align-self-end">
                         <button type="submit" class="btn btn-warning text-dark fw-bold w-100 shadow-sm rounded-pill">
-                            <i class="bi bi-funnel-fill"></i> Filter
+                            <i class="bi bi-search"></i> Filter
                         </button>
                     </div>
                 </div>
@@ -38,27 +40,29 @@
             @if (!Model.FilteredProducts.Any())
             {
                 <div class="alert alert-info text-center">
-                    <i class="bi bi-exclamation-circle"></i> No products found for the selected criteria.
+                    <i class="bi bi-exclamation-circle"></i> No products found for the given filters.
                 </div>
             }
             else
             {
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle shadow-sm">
+                    <table class="table table-hover shadow-sm align-middle">
                         <thead class="table-success text-dark">
                             <tr>
-                                <th>📝 Name</th>
+                                <th>📝 Product Name</th>
                                 <th>📦 Category</th>
                                 <th>📆 Production Date</th>
+                                <th>👤 Farmer</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var product in Model.FilteredProducts)
+                            @foreach (var p in Model.FilteredProducts)
                             {
                                 <tr>
-                                    <td class="fw-semibold">@product.Name</td>
-                                    <td>@product.Category</td>
-                                    <td>@product.ProductionDate.ToString("dd MMM yyyy")</td>
+                                    <td class="fw-semibold">@p.Name</td>
+                                    <td>@p.Category</td>
+                                    <td>@p.ProductionDate.ToString("dd MMM yyyy")</td>
+                                    <td>@p.FarmerProfile.User.FullName</td>
                                 </tr>
                             }
                         </tbody>

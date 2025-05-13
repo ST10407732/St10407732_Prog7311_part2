@@ -1,8 +1,227 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to Agri Energy Connect";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="position-relative mb-5">
+    <div class="bg-image rounded shadow-sm" style="height: 400px; background: linear-gradient(rgba(0, 100, 0, 0.7), rgba(107, 142, 35, 0.7)), url('https://source.unsplash.com/featured/?agriculture,solar,green-energy') no-repeat center; background-size: cover;">
+        <div class="container h-100 d-flex flex-column justify-content-center text-white">
+            <div class="px-md-5 py-5">
+                <h1 class="display-4 fw-bold mb-3">Welcome to Agri Energy Connect</h1>
+                <p class="lead mb-4">Empowering sustainable farming through renewable energy innovation and digital integration.</p>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <div>
+                        <a class="btn btn-light btn-lg px-4 me-2" asp-controller="Account" asp-action="Register">
+                            <i class="bi bi-person-plus me-2"></i>Join Us
+                        </a>
+                        <a class="btn btn-outline-light btn-lg px-4" asp-controller="Account" asp-action="Login">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Log In
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <a class="btn btn-light btn-lg px-4" asp-controller="Home" asp-action="Dashboard">
+                        <i class="bi bi-speedometer2 me-2"></i>Go to Dashboard
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content Section -->
+<div class="row mt-5">
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Farmer"))
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 text-center">
+                        <i class="bi bi-droplet-half icon-feature text-success fs-1 mb-3"></i>
+                        <h3>Track Energy Usage</h3>
+                        <p class="text-muted">Monitor your solar and irrigation energy metrics in real-time.</p>
+                        <a asp-controller="Energy" asp-action="Index" class="btn btn-success">
+                            <i class="bi bi-graph-up-arrow me-2"></i>View Reports
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 text-center">
+                        <i class="bi bi-shop-window icon-feature text-success fs-1 mb-3"></i>
+                        <h3>Marketplace</h3>
+                        <p class="text-muted">Buy or sell surplus energy or produce with trusted partners.</p>
+                        <a asp-controller="Marketplace" asp-action="Index" class="btn btn-success">
+                            <i class="bi bi-cart-check me-2"></i>Go to Market
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("Coordinator"))
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 text-center">
+                        <i class="bi bi-person-lines-fill text-success fs-1 mb-3"></i>
+                        <h3>Manage Users</h3>
+                        <p class="text-muted">Oversee registrations, permissions, and role-based access.</p>
+                        <a asp-controller="Users" asp-action="Index" class="btn btn-outline-success">
+                            <i class="bi bi-people me-2"></i>View Users
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 text-center">
+                        <i class="bi bi-card-checklist text-success fs-1 mb-3"></i>
+                        <h3>Review Submissions</h3>
+                        <p class="text-muted">Validate claims, data submissions, and energy reports.</p>
+                        <a asp-controller="Claims" asp-action="Index" class="btn btn-outline-success">
+                            <i class="bi bi-file-earmark-check me-2"></i>Manage Claims
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("Admin"))
+        {
+            <div class="col-12 mb-4">
+                <div class="card shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <h2 class="card-title mb-3">Admin Console</h2>
+                        <p class="lead text-muted">Configure system-wide settings, oversee all modules, and maintain integrity.</p>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("Employee"))
+        {
+            <div class="col-12 mb-4 text-center">
+                <h2 class="fw-bold mb-4 text-success">Welcome, Employee!</h2>
+                <p class="lead text-muted">You're empowered to manage farmers and products.</p>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="bi bi-person-plus-fill text-success fs-1 mb-3"></i>
+                        <h4>Add New Farmer</h4>
+                        <p class="text-muted">Register a new farmer to the system.</p>
+                        <a asp-controller="Farmers" asp-action="Create" class="btn btn-success">
+                            <i class="bi bi-plus-circle me-2"></i>Add Farmer
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="bi bi-people-fill text-success fs-1 mb-3"></i>
+                        <h4>View Farmers</h4>
+                        <p class="text-muted">Browse and manage all registered farmers.</p>
+                        <a asp-controller="Farmers" asp-action="Index" class="btn btn-success">
+                            <i class="bi bi-list-ul me-2"></i>View Farmers
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="bi bi-box-seam text-success fs-1 mb-3"></i>
+                        <h4>All Products</h4>
+                        <p class="text-muted">View and manage all agricultural products.</p>
+                        <a asp-controller="Products" asp-action="Index" class="btn btn-success">
+                            <i class="bi bi-basket me-2"></i>All Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <!-- Public Info Cards -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-sun icon-feature text-success fs-1 mb-3"></i>
+                    <h3>Solar-Powered Future</h3>
+                    <p class="text-muted">Harness the sun to power your farm and reduce energy costs sustainably.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-leaf icon-feature text-success fs-1 mb-3"></i>
+                    <h3>Smart Agriculture</h3>
+                    <p class="text-muted">Connect devices, automate irrigation, and analyze crop patterns effectively.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-globe2 icon-feature text-success fs-1 mb-3"></i>
+                    <h3>Global Connectivity</h3>
+                    <p class="text-muted">Link with suppliers, cooperatives, and funders through one trusted platform.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <div class="row mt-5 pt-5 border-top">
+            <div class="col-12 mb-4">
+                <h2 class="text-center mb-5">Why Choose Agri Energy Connect</h2>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-shield-lock text-success fs-2 me-3"></i>
+                            <h4 class="mb-0">Data Security</h4>
+                        </div>
+                        <p class="text-muted">We prioritize your data privacy and integrity with enterprise-grade security standards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-recycle text-success fs-2 me-3"></i>
+                            <h4 class="mb-0">Eco-Friendly Practices</h4>
+                        </div>
+                        <p class="text-muted">We help reduce carbon footprints by promoting green tech in farming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row mt-5 text-center">
+            <div class="col">
+                <h3 class="mb-3">Ready to Transform Your Farm?</h3>
+                <p class="lead mb-4">Join Agri Energy Connect and take a leap toward a greener future.</p>
+                <a asp-controller="Account" asp-action="Register" class="btn btn-success btn-lg px-4">
+                    <i class="bi bi-person-plus me-2"></i>Get Started
+                </a>
+            </div>
+        </div>
+    }
 </div>

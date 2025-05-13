@@ -3,76 +3,148 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AgriConnectPlatform</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AgriConnectPlatform.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - Agri Energy Connect</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --green: #2e7d32;
+            --light-green: #a5d6a7;
+            --yellow: #f9a825;
+            --bg-color: #f5f5f5;
+            --text-dark: #212121;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+
+        .navbar {
+            background-color: var(--green);
+        }
+
+        .navbar-brand {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--yellow) !important;
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: var(--yellow) !important;
+            }
+
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 160px);
+        }
+
+        footer {
+            background-color: var(--green);
+            color: var(--text-light);
+            padding: 2rem 0;
+        }
+
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-tag {
+            background-color: var(--yellow);
+            color: var(--green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AgriConnectPlatform</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-tree-fill"></i> Agri Energy Connect
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <!-- Left side of navbar -->
-                    <ul class="navbar-nav me-auto">
+
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                       
 
-                        @if (User.IsInRole("Employee"))
-                        {
-                            <li class="nav-item">
-                                <a asp-controller="Account" asp-action="FarmerRegister" class="btn btn-success">Register New Farmer</a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a asp-controller="Employee" asp-action="ViewFarmers" class="nav-link">View Farmers</a>
-
-                            </li>
-                        }
-
-                        @if (User.IsInRole("Farmer"))
-                        {
-                            <!-- Farmer Dashboard Link -->
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Farmer" asp-action="AddProduct">Add Product</a>
-                            </li>
-                            <!-- Farmer Products Link -->
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Farmer" asp-action="MyProducts">My Products</a>
-                            </li>
-                        }
-                    </ul>
-
-                    <!-- Right side: Auth links -->
-                    <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Profile">Hello, @User.Identity.Name!</a>
+                            if (User.IsInRole("Employee"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Account" asp-action="FarmerRegister"><i class="bi bi-person-plus"></i> Register New Farmer</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Employee" asp-action="ViewFarmers"><i class="bi bi-person-plus"></i> View Farmers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Employee" asp-action="AllProducts"><i class="bi bi-box-seam"></i> All Products</a>
+                                </li>
+                              
+                            }
+
+                            if (User.IsInRole("Farmer"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Farmer" asp-action="MyProducts"><i class="bi bi-cart-plus"></i> Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Farmer" asp-action="AddProduct"><i class="bi bi-flower1"></i> Add Products</a>
+                                </li>
+                               
+                            }
+                        }
+
+                       
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item d-flex align-items-center me-3">
+                                <span class="welcome-tag"><i class="bi bi-person-check-fill"></i> @User.Identity.Name</span>
                             </li>
                             <li class="nav-item">
-                                <form method="post" asp-controller="Account" asp-action="Logout" class="form-inline">
-                                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-                                </form>
+                                <a class="nav-link" asp-controller="Account" asp-action="Logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
+                                <a class="nav-link" asp-controller="Account" asp-action="Login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
-                            </li>
+                           
                         }
                     </ul>
                 </div>
@@ -80,21 +152,30 @@
         </nav>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main class="container main-content">
+        @RenderBody()
+    </main>
 
-    <footer class="border-top footer text-muted">
+    <footer class="text-center">
         <div class="container">
-            &copy; 2025 - AgriConnectPlatform - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row text-start">
+                <div class="col-md-6 mb-3">
+                    <div class="footer-title"><i class="bi bi-sun-fill"></i> Agri Energy Connect</div>
+                    <p>Bridging agriculture with sustainable energy solutions for every farmer, everywhere.</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="footer-title">Contact</div>
+                    <p><i class="bi bi-geo-alt-fill"></i> GreenField Innovation Park</p>
+                    <p><i class="bi bi-envelope-fill"></i> support@agrienergyconnect.com</p>
+                    <p><i class="bi bi-phone-fill"></i> +27 123 456 789</p>
+                </div>
+            </div>
+            <hr style="opacity: 0.2;" />
+            <p>&copy; 2025 Agri Energy Connect. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

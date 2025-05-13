@@ -1,19 +1,43 @@
 ﻿@model AgriConnect.ViewModels.LoginViewModel
 
-<h2>Login</h2>
-<form asp-action="Login" method="post">
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger" />
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card p-4 shadow" style="max-width: 450px; width: 100%;">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold" style="color: var(--green);">Welcome Back</h2>
+            <p class="text-muted">Login to Agri Energy Connect</p>
+        </div>
+
+        <form asp-action="Login" method="post" novalidate>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-semibold text-dark"></label>
+                <input asp-for="Email" class="form-control rounded-3" placeholder="you@example.com" />
+                <span asp-validation-for="Email" class="text-danger small" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label fw-semibold text-dark"></label>
+                <input asp-for="Password" type="password" class="form-control rounded-3" placeholder="••••••••" />
+                <span asp-validation-for="Password" class="text-danger small" />
+            </div>
+
+            <div class="form-check mb-3">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label class="form-check-label" asp-for="RememberMe">Remember me</label>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success rounded-pill" style="background-color: var(--green); border: none;">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-4 text-center">
+            <small class="text-muted">Don't have an account? <a asp-controller="Account" asp-action="Register" class="text-decoration-none" style="color: var(--green); font-weight: 500;">Sign Up</a></small>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <input asp-for="RememberMe" type="checkbox" /> Remember me
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+</div>

@@ -1,5 +1,6 @@
 ﻿using AgriConnect.Data;
 using AgriConnect.Models;
+using AgriConnect.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -58,30 +59,85 @@ namespace AgriConnect.Controllers
             var products = query.ToList();
             return View(products);
         }
-    
-// View all farmers
-public async Task<IActionResult> ViewFarmers()
-{
-    var farmers = await _context.FarmerProfiles
-        .Include(f => f.User) // assuming FarmerProfile has a navigation to User
-        .ToListAsync();
 
-    return View(farmers);
-}
+        // View all farmers
+        public async Task<IActionResult> ViewFarmers()
+        {
+            var farmers = await _context.FarmerProfiles
+                .Include(f => f.User) // assuming FarmerProfile has a navigation to User
+                .ToListAsync();
 
-// View products for a specific farmer
-public async Task<IActionResult> ViewFarmerProducts(int farmerId)
-{
-    var products = await _context.Products
-        .Where(p => p.FarmerProfileId == farmerId)
-        .ToListAsync();
+            return View(farmers);
+        }
 
-    var farmer = await _context.FarmerProfiles
-        .FirstOrDefaultAsync(f => f.Id == farmerId);
+        // View products for a specific farmer
+        public async Task<IActionResult> ViewFarmerProducts(int farmerId, string productType, DateTime? fromDate, DateTime? toDate)
+        {
+            var query = _context.Products
+                .Where(p => p.FarmerProfileId == farmerId);
 
-    ViewBag.FarmerName = farmer?.User?.FullName ?? "Farmers";
+            if (!string.IsNullOrEmpty(productType))
+            {
+                query = query.Where(p => p.Category == productType);
+            }
 
-    return View(products);
-}
+            if (fromDate.HasValue)
+            {
+                query = query.Where(p => p.ProductionDate >= fromDate.Value);
+            }
+
+            if (toDate.HasValue)
+            {
+                query = query.Where(p => p.ProductionDate <= toDate.Value);
+            }
+
+            var model = new ProductFilterViewModel
+            {
+                ProductType = productType,
+                FromDate = fromDate,
+                ToDate = toDate,
+                FilteredProducts = await query.ToListAsync()
+            };
+
+            var farmer = await _context.FarmerProfiles
+                .Include(f => f.User)
+                .FirstOrDefaultAsync(f => f.Id == farmerId);
+
+            ViewBag.FarmerName = farmer?.User?.FullName ?? "Unknown Farmer";
+            ViewBag.FarmerId = farmerId;
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> AllProducts(string productType, DateTime? fromDate, DateTime? toDate, string farmerName)
+        {
+            var query = _context.Products
+                .Include(p => p.FarmerProfile)
+                .ThenInclude(f => f.User)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(productType))
+                query = query.Where(p => p.Category.Contains(productType));
+
+            if (!string.IsNullOrEmpty(farmerName))
+                query = query.Where(p => p.FarmerProfile.User.FullName.Contains(farmerName));
+
+            if (fromDate.HasValue)
+                query = query.Where(p => p.ProductionDate >= fromDate);
+
+            if (toDate.HasValue)
+                query = query.Where(p => p.ProductionDate <= toDate);
+
+            var model = new ProductSearchViewModel
+            {
+                ProductType = productType,
+                FromDate = fromDate,
+                ToDate = toDate,
+                FarmerName = farmerName,
+                FilteredProducts = await query.ToListAsync()
+            };
+
+            return View(model);
+        }
     }
 }

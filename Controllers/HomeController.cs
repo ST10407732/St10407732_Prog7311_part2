@@ -15,8 +15,19 @@ namespace AgriConnect.Controllers
 
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                var role = User.IsInRole("Employee") ? "Employee" :
+                           User.IsInRole("Farmer") ? "Farmer" :
+
+                           User.IsInRole("Admin") ? "Admin" : "User";
+
+                ViewBag.Role = role;
+            }
+
             return View();
         }
+
 
         public IActionResult Privacy()
         {

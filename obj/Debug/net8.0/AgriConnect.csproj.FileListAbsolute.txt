@@ -175,3 +175,4 @@ C:\Users\davyc\source\repos\AgriConnect\obj\Debug\net8.0\refint\AgriConnect.dll
 C:\Users\davyc\source\repos\AgriConnect\obj\Debug\net8.0\AgriConnect.pdb
 C:\Users\davyc\source\repos\AgriConnect\obj\Debug\net8.0\AgriConnect.genruntimeconfig.cache
 C:\Users\davyc\source\repos\AgriConnect\obj\Debug\net8.0\ref\AgriConnect.dll
+C:\Users\davyc\source\repos\AgriConnect\obj\Debug\net8.0\AgriConnect.sourcelink.json

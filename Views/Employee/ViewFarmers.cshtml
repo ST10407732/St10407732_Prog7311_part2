@@ -1,25 +1,49 @@
 ﻿@model IEnumerable<AgriConnect.Models.FarmerProfile>
 
-<h2>All Registered Farmers</h2>
+@{
+    ViewData["Title"] = "All Registered Farmers";
+}
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Farmer Name</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var farmer in Model)
-        {
-            <tr>
-                <td>@farmer.User.FullName</td>
-                <td>
-                    <a asp-action="ViewFarmerProducts" asp-route-farmerId="@farmer.Id" class="btn btn-primary">
-                        View Products
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-success text-white rounded-top-4">
+            <h3 class="mb-0"><i class="bi bi-people-fill"></i> All Registered Farmers</h3>
+        </div>
+        <div class="card-body bg-light">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-info-circle"></i> No farmers have registered yet.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle shadow-sm rounded">
+                        <thead class="table-success">
+                            <tr>
+                                <th>👨‍🌾 Farmer Name</th>
+                                <th>🛒 Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var farmer in Model)
+                            {
+                                <tr>
+                                    <td class="fw-semibold text-dark">@farmer.User.FullName</td>
+                                    <td>
+                                        <a asp-action="ViewFarmerProducts"
+                                           asp-route-farmerId="@farmer.Id"
+                                           class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-1 shadow-sm">
+                                            <i class="bi bi-box-seam"></i> View Products
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
