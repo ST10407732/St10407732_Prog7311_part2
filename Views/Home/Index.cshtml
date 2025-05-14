@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Welcome to Agri Energy Connect";
 }
-
 <!-- Hero Section -->
 <div class="position-relative mb-5">
     <div class="bg-image rounded shadow-sm" style="height: 400px; background: linear-gradient(rgba(0, 100, 0, 0.7), rgba(107, 142, 35, 0.7)), url('https://source.unsplash.com/featured/?agriculture,solar,green-energy') no-repeat center; background-size: cover;">
@@ -20,12 +19,12 @@
                         </a>
                     </div>
                 }
-                else
+              @*   else
                 {
-                    <a class="btn btn-light btn-lg px-4" asp-controller="Home" asp-action="Dashboard">
-                        <i class="bi bi-speedometer2 me-2"></i>Go to Dashboard
+                    <a class="btn btn-light btn-lg px-4" asp-controller="Account" asp-action="Login">
+                        <i class="bi bi-speedometer2 me-2"></i>Login
                     </a>
-                }
+                } *@
             </div>
         </div>
     </div>
@@ -37,60 +36,38 @@
     {
         if (User.IsInRole("Farmer"))
         {
+            <div class="col-12 mb-4 text-center">
+                <h2 class="fw-bold mb-4 text-success">Welcome, @ViewBag.FarmerName!</h2>
+                <p class="lead text-muted">You're ready to manage your farm products and energy data.</p>
+            </div>
+
             <div class="col-md-6 mb-4">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4 text-center">
-                        <i class="bi bi-droplet-half icon-feature text-success fs-1 mb-3"></i>
-                        <h3>Track Energy Usage</h3>
-                        <p class="text-muted">Monitor your solar and irrigation energy metrics in real-time.</p>
-                        <a asp-controller="Energy" asp-action="Index" class="btn btn-success">
-                            <i class="bi bi-graph-up-arrow me-2"></i>View Reports
+                <div class="card shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="bi bi-plus-square-fill text-success fs-1 mb-3"></i>
+                        <h4>Add Product</h4>
+                        <p class="text-muted">Add a new agricultural product to the platform.</p>
+                        <a asp-controller="Farmer" asp-action="AddProduct" class="btn btn-success">
+                            <i class="bi bi-plus-circle me-2"></i>Add Product
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6 mb-4">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4 text-center">
-                        <i class="bi bi-shop-window icon-feature text-success fs-1 mb-3"></i>
-                        <h3>Marketplace</h3>
-                        <p class="text-muted">Buy or sell surplus energy or produce with trusted partners.</p>
-                        <a asp-controller="Marketplace" asp-action="Index" class="btn btn-success">
-                            <i class="bi bi-cart-check me-2"></i>Go to Market
+                <div class="card shadow-sm border-0 text-center">
+                    <div class="card-body p-4">
+                        <i class="bi bi-boxes text-success fs-1 mb-3"></i>
+                        <h4>View My Products</h4>
+                        <p class="text-muted">See all your submitted products.</p>
+                        <a asp-controller="Farmer" asp-action="MyProducts" class="btn btn-success">
+                            <i class="bi bi-list-check me-2"></i>View Products
                         </a>
                     </div>
                 </div>
             </div>
         }
-        else if (User.IsInRole("Coordinator"))
-        {
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4 text-center">
-                        <i class="bi bi-person-lines-fill text-success fs-1 mb-3"></i>
-                        <h3>Manage Users</h3>
-                        <p class="text-muted">Oversee registrations, permissions, and role-based access.</p>
-                        <a asp-controller="Users" asp-action="Index" class="btn btn-outline-success">
-                            <i class="bi bi-people me-2"></i>View Users
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4 text-center">
-                        <i class="bi bi-card-checklist text-success fs-1 mb-3"></i>
-                        <h3>Review Submissions</h3>
-                        <p class="text-muted">Validate claims, data submissions, and energy reports.</p>
-                        <a asp-controller="Claims" asp-action="Index" class="btn btn-outline-success">
-                            <i class="bi bi-file-earmark-check me-2"></i>Manage Claims
-                        </a>
-                    </div>
-                </div>
-            </div>
-        }
+     
         else if (User.IsInRole("Admin"))
         {
             <div class="col-12 mb-4">
@@ -115,7 +92,7 @@
                         <i class="bi bi-person-plus-fill text-success fs-1 mb-3"></i>
                         <h4>Add New Farmer</h4>
                         <p class="text-muted">Register a new farmer to the system.</p>
-                        <a asp-controller="Farmers" asp-action="Create" class="btn btn-success">
+                        <a asp-controller="Account" asp-action="FarmerRegister" class="btn btn-success">
                             <i class="bi bi-plus-circle me-2"></i>Add Farmer
                         </a>
                     </div>
@@ -128,7 +105,7 @@
                         <i class="bi bi-people-fill text-success fs-1 mb-3"></i>
                         <h4>View Farmers</h4>
                         <p class="text-muted">Browse and manage all registered farmers.</p>
-                        <a asp-controller="Farmers" asp-action="Index" class="btn btn-success">
+                        <a asp-controller="Employee" asp-action="ViewFarmers" class="btn btn-success">
                             <i class="bi bi-list-ul me-2"></i>View Farmers
                         </a>
                     </div>
@@ -141,7 +118,7 @@
                         <i class="bi bi-box-seam text-success fs-1 mb-3"></i>
                         <h4>All Products</h4>
                         <p class="text-muted">View and manage all agricultural products.</p>
-                        <a asp-controller="Products" asp-action="Index" class="btn btn-success">
+                        <a asp-controller="Employee" asp-action="AllProducts" class="btn btn-success">
                             <i class="bi bi-basket me-2"></i>All Products
                         </a>
                     </div>

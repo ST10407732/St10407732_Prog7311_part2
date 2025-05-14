@@ -1,10 +1,9 @@
 ﻿using AgriConnect.Models;
 using AgriConnect.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-
-
-
 
 namespace AgriConnect
 {
@@ -23,18 +22,27 @@ namespace AgriConnect
                 .AddEntityFrameworkStores<AgriDbContext>()
                 .AddDefaultTokenProviders();
 
+            // Register DbSeeder as scoped
+            builder.Services.AddScoped<DbSeeder>();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            // ✅ Call SeedData *after* building the app
+            // Apply migrations and seed data
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                await DbSeeder.SeedData(services); // 👈 Use your DbSeeder here
+
+                var db = services.GetRequiredService<AgriDbContext>();
+                db.Database.Migrate(); // Ensure migrations applied
+
+                // Get the DbSeeder instance and call SeedData
+                var dbSeeder = services.GetRequiredService<DbSeeder>();
+                await dbSeeder.SeedData(); // Call the instance method
             }
 
-            // Pipeline
+            // Configure the HTTP request pipeline
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -43,12 +51,11 @@ namespace AgriConnect
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 
+            // Configure default route
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
