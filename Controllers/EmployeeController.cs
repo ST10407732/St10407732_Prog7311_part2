@@ -139,5 +139,29 @@ namespace AgriConnect.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteFarmer(int id)
+        {
+            var farmer = await _context.FarmerProfiles.Include(f => f.User)
+                                                      .FirstOrDefaultAsync(f => f.Id == id);
+
+            if (farmer == null)
+            {
+                return NotFound();
+            }
+
+            // Optional: Also remove the associated user if needed
+            if (farmer.User != null)
+            {
+                _context.Users.Remove(farmer.User);
+            }
+
+            _context.FarmerProfiles.Remove(farmer);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("AllFarmers");
+        }
+
     }
 }

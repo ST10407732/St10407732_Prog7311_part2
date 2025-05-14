@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6bEK/GnKWBelsTiRp/t+/KZVTPtUwGd8c5gS8ReZLAs=",
+  "Hash": "kusYJHZvB4lIvgFGyTRUOiXAeFbyZmSaBVtBcizyfkA=",
   "Source": "AgriConnect",
   "BasePath": "_content/AgriConnect",
   "Mode": "Default",
@@ -99,6 +99,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg",
+      "SourceId": "AgriConnect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\",
+      "BasePath": "_content/AgriConnect",
+      "RelativePath": "images/products/38b13fdd-b878-4484-ae3b-d51c3d95251d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6vkbj46uj4",
+      "Integrity": "YqEC2v2CcTkARomI0K+74VqFDFK8B6YSYdHBKzMGp7g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\chicken.jpg",
+      "SourceId": "AgriConnect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\",
+      "BasePath": "_content/AgriConnect",
+      "RelativePath": "images/products/chicken#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5os08y4umr",
+      "Integrity": "JSHxv73JHtVtNcn/7qhqdUD3mO+fI6ARncDNu8axykg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\chicken.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg",
+      "SourceId": "AgriConnect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\",
+      "BasePath": "_content/AgriConnect",
+      "RelativePath": "images/products/feef43eb-963c-43ed-9adc-1cdc8b4758f7#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5595w6di6c",
+      "Integrity": "d/oN+hl7ot7U+PelMElWqKPBitJS72jpnF6dAtLOm9U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\tomato.jpeg",
+      "SourceId": "AgriConnect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\",
+      "BasePath": "_content/AgriConnect",
+      "RelativePath": "images/products/tomato#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "huy0jr3inj",
+      "Integrity": "l2BYtLubkpHqF+ydIPTOZbYXtj9FknV5BnROczw4W+A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\tomato.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\wheat.jpeg",
+      "SourceId": "AgriConnect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\",
+      "BasePath": "_content/AgriConnect",
+      "RelativePath": "images/products/wheat#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1l2bf9t4yq",
+      "Integrity": "1eQPvOD+UopjcGS/ZcyID3evPrndSW1XgzWz3Pkt6iI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\wheat.jpeg"
     },
     {
       "Identity": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\js\\site.js",
@@ -1645,6 +1750,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/38b13fdd-b878-4484-ae3b-d51c3d95251d.6vkbj46uj4.jpg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "337165"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YqEC2v2CcTkARomI0K+74VqFDFK8B6YSYdHBKzMGp7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 15:43:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6vkbj46uj4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YqEC2v2CcTkARomI0K+74VqFDFK8B6YSYdHBKzMGp7g="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "337165"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YqEC2v2CcTkARomI0K+74VqFDFK8B6YSYdHBKzMGp7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 15:43:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YqEC2v2CcTkARomI0K+74VqFDFK8B6YSYdHBKzMGp7g="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/chicken.5os08y4umr.jpg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\chicken.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "304217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JSHxv73JHtVtNcn/7qhqdUD3mO+fI6ARncDNu8axykg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 15:22:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5os08y4umr"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/chicken.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JSHxv73JHtVtNcn/7qhqdUD3mO+fI6ARncDNu8axykg="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/chicken.jpg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\chicken.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "304217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JSHxv73JHtVtNcn/7qhqdUD3mO+fI6ARncDNu8axykg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 15:22:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JSHxv73JHtVtNcn/7qhqdUD3mO+fI6ARncDNu8axykg="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/feef43eb-963c-43ed-9adc-1cdc8b4758f7.5595w6di6c.jpeg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202162"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"d/oN+hl7ot7U+PelMElWqKPBitJS72jpnF6dAtLOm9U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 09:54:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5595w6di6c"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-d/oN+hl7ot7U+PelMElWqKPBitJS72jpnF6dAtLOm9U="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "202162"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"d/oN+hl7ot7U+PelMElWqKPBitJS72jpnF6dAtLOm9U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 09:54:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-d/oN+hl7ot7U+PelMElWqKPBitJS72jpnF6dAtLOm9U="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/tomato.huy0jr3inj.jpeg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\tomato.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18031"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l2BYtLubkpHqF+ydIPTOZbYXtj9FknV5BnROczw4W+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 10:14:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "huy0jr3inj"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/tomato.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-l2BYtLubkpHqF+ydIPTOZbYXtj9FknV5BnROczw4W+A="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/tomato.jpeg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\tomato.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18031"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l2BYtLubkpHqF+ydIPTOZbYXtj9FknV5BnROczw4W+A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 10:14:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-l2BYtLubkpHqF+ydIPTOZbYXtj9FknV5BnROczw4W+A="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/wheat.1l2bf9t4yq.jpeg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\wheat.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17414"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1eQPvOD+UopjcGS/ZcyID3evPrndSW1XgzWz3Pkt6iI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 15:23:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1l2bf9t4yq"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/wheat.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1eQPvOD+UopjcGS/ZcyID3evPrndSW1XgzWz3Pkt6iI="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/wheat.jpeg",
+      "AssetFile": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\wheat.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17414"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1eQPvOD+UopjcGS/ZcyID3evPrndSW1XgzWz3Pkt6iI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 15:23:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1eQPvOD+UopjcGS/ZcyID3evPrndSW1XgzWz3Pkt6iI="
         }
       ]
     },

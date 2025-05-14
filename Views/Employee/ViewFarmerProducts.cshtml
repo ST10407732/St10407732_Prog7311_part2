@@ -47,8 +47,11 @@
                     <table class="table table-hover align-middle shadow-sm">
                         <thead class="table-success text-dark">
                             <tr>
+                                <th>📸 Image</th>
                                 <th>📝 Name</th>
                                 <th>📦 Category</th>
+                                <th>💰 Price</th>
+                                <th>📝 Description</th>
                                 <th>📆 Production Date</th>
                             </tr>
                         </thead>
@@ -56,12 +59,18 @@
                             @foreach (var product in Model.FilteredProducts)
                             {
                                 <tr>
+                                    <td>
+                                        <img src="@product.ImageUrl" alt="Product Image" width="80" height="80" class="rounded shadow-sm" />
+                                    </td>
                                     <td class="fw-semibold">@product.Name</td>
                                     <td>@product.Category</td>
+                                    <td>R @product.Price.ToString("F2")</td>
+                                    <td>@product.Description</td>
                                     <td>@product.ProductionDate.ToString("dd MMM yyyy")</td>
                                 </tr>
                             }
                         </tbody>
+
                     </table>
                 </div>
             }

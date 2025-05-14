@@ -1,5 +1,10 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\products\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg
+wwwroot\images\products\chicken.jpg
+wwwroot\images\products\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg
+wwwroot\images\products\tomato.jpeg
+wwwroot\images\products\wheat.jpeg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

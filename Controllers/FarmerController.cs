@@ -27,25 +27,52 @@ namespace AgriConnect.Controllers
             return View();
         }
 
-        // POST: Farmer/AddProduct
         [HttpPost]
-        public async Task<IActionResult> AddProduct(Product product)
+        public async Task<IActionResult> AddProduct(Product product, IFormFile imageFile)
         {
-           // if (!ModelState.IsValid) return View(product);
+            try
+            {
+                var user = await _userManager.GetUserAsync(User);
+                var farmerProfile = await _context.FarmerProfiles.FirstOrDefaultAsync(f => f.UserId == user.Id);
 
-            var user = await _userManager.GetUserAsync(User);
-            var farmerProfile = await _context.FarmerProfiles.FirstOrDefaultAsync(f => f.UserId == user.Id);
+                if (farmerProfile == null)
+                {
+                    TempData["ErrorMessage"] = "Farmer profile not found.";
+                    return RedirectToAction("AddProduct");
+                }
 
-            if (farmerProfile == null)
-                return NotFound("Farmer profile not found.");
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "products");
+                    Directory.CreateDirectory(uploadsFolder);
 
-            product.FarmerProfileId = farmerProfile.Id;
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
 
-            return RedirectToAction("MyProducts");
+                    product.ImageUrl = "/images/products/" + uniqueFileName;
+                }
+
+                product.FarmerProfileId = farmerProfile.Id;
+
+                _context.Products.Add(product);
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Product added successfully!";
+                return RedirectToAction("AddProduct");
+            }
+            catch (Exception ex)
+            {
+                // Optional: Log the exception
+                TempData["ErrorMessage"] = "An error occurred while adding the product. Please try again.";
+                return RedirectToAction("AddProduct");
+            }
         }
+
 
         // GET: Farmer/MyProducts
         public async Task<IActionResult> MyProducts()

@@ -11,7 +11,7 @@
                 @if (!User.Identity.IsAuthenticated)
                 {
                     <div>
-                        <a class="btn btn-light btn-lg px-4 me-2" asp-controller="Account" asp-action="Register">
+                        <a class="btn btn-light btn-lg px-4 me-2" asp-controller="Account" asp-action="Login">
                             <i class="bi bi-person-plus me-2"></i>Join Us
                         </a>
                         <a class="btn btn-outline-light btn-lg px-4" asp-controller="Account" asp-action="Login">
@@ -19,12 +19,7 @@
                         </a>
                     </div>
                 }
-              @*   else
-                {
-                    <a class="btn btn-light btn-lg px-4" asp-controller="Account" asp-action="Login">
-                        <i class="bi bi-speedometer2 me-2"></i>Login
-                    </a>
-                } *@
+             
             </div>
         </div>
     </div>
@@ -195,7 +190,7 @@
             <div class="col">
                 <h3 class="mb-3">Ready to Transform Your Farm?</h3>
                 <p class="lead mb-4">Join Agri Energy Connect and take a leap toward a greener future.</p>
-                <a asp-controller="Account" asp-action="Register" class="btn btn-success btn-lg px-4">
+                <a asp-controller="Account" asp-action="Login" class="btn btn-success btn-lg px-4">
                     <i class="bi bi-person-plus me-2"></i>Get Started
                 </a>
             </div>

@@ -103,37 +103,48 @@ public class DbSeeder
                 var profile = new FarmerProfile
                 {
                     UserId = farmerUser.Id,
-                    FullName = farmer.FarmName,
+                    FullName = farmer.FullName,
                     Location = farmer.Location
                 };
                 _dbContext.FarmerProfiles.Add(profile);
                 await _dbContext.SaveChangesAsync();
 
-                // Seed products for each farmer
                 var products = new[]
-                {
-                    new Product
-                    {
-                        Name = "Cows",
-                        Category = "Livestock",
-                        ProductionDate = DateTime.Now.AddDays(-10),
-                        FarmerProfileId = profile.Id
-                    },
-                    new Product
-                    {
-                        Name = "Chicken",
-                        Category = "Livestock",
-                        ProductionDate = DateTime.Now.AddDays(-5),
-                        FarmerProfileId = profile.Id
-                    },
-                    new Product
-                    {
-                        Name = "Wheat",
-                        Category = "Crops",
-                        ProductionDate = DateTime.Now.AddDays(-7),
-                        FarmerProfileId = profile.Id
-                    }
-                };
+ {
+    new Product
+    {
+        Name = "Tomatoes",
+        Category = "Vegetables",
+        Description = "Shiny Jam Tomatoes.",
+        Price = 15000.00M,
+        ImageUrl = "/images/products/tomato.jpeg",
+        ProductionDate = DateTime.Now.AddDays(-10),
+        FarmerProfileId = profile.Id
+    },
+    new Product
+    {
+        Name = "Chicken",
+        Category = "Livestock",
+        Description = "Free-range organic chickens.",
+        Price = 80.00M,
+        ImageUrl = "/images/products/chicken.jpg",
+        ProductionDate = DateTime.Now.AddDays(-5),
+        FarmerProfileId = profile.Id
+    },
+    new Product
+    {
+        Name = "Wheat",
+        Category = "Crops",
+        Description = "High-quality winter wheat.",
+        Price = 320.00M,
+        ImageUrl = "/images/products/wheat.jpeg",
+        ProductionDate = DateTime.Now.AddDays(-7),
+        FarmerProfileId = profile.Id
+    }
+};
+
+            
+            ;
 
                 _dbContext.Products.AddRange(products);
                 await _dbContext.SaveChangesAsync();

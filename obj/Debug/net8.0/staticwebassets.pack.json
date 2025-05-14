@@ -13,6 +13,26 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\38b13fdd-b878-4484-ae3b-d51c3d95251d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\chicken.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\chicken.jpg"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\feef43eb-963c-43ed-9adc-1cdc8b4758f7.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\tomato.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\tomato.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\images\\products\\wheat.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\wheat.jpeg"
+    },
+    {
       "Id": "C:\\Users\\davyc\\source\\repos\\AgriConnect\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
