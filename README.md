@@ -45,7 +45,7 @@ Update the `appsettings.json` file with your SQL Server connection string:
   login as a Farmer after being added by the employee and add product
   View Own Products: See a list of products they’ve added.
 
- ## Employee Role**
+  Employee Role**
 Login only (pre-seeded).
 LOGIN CREDENTIALS
 EMAIL: employee@agri.com
@@ -99,3 +99,62 @@ Use the seeded credentials to log in.
 Navigate to the Add Farmer section to register new farmers.
 
 View products from all farmers using filters by date or type.
+
+
+**Code Attributions**
+Microsoft Identity Integration:
+
+Author: Andy Malone MVP
+Link: Microsoft Identity Tutorial
+Date Accessed: 05 May 2025
+MVC Application Framework:
+
+Author: Microsoft
+Link: ASP.NET Core MVC Tutorial
+Date Accessed: 06 May 2025
+Data Annotation Attributes:
+
+Author: Simplilearn
+Link: Data Annotation in ASP.NET MVC
+Date Accessed: 06 May 2025
+ASP.NET App with SSMS Database:
+
+Author: Andy Malone MVP
+Link: Database Connection Tutorial
+Date Accessed: 05 May 2025
+HTML Resources:
+
+Author: w3schools
+Link: HTML Tutorial
+Date Accessed: 08 May 2025
+CSS Resources:
+
+Author: w3schools
+Link: CSS Tutorial
+Date Accessed: 08 May 2025
+JQuery Resources:
+
+Author: w3schools
+Link: JQuery Tutorial
+Date Accessed: 08 May 2025
+JavaScript Resources:
+
+Author: w3schools
+Link: JavaScript Tutorial
+Date Accessed: 08 May 2025
+REGEX Validation Resources:
+
+Author: Tyler Woodward
+Link: Phone Validation Regex: The What, How, and Pros and Cons
+Date Accessed: 08 May 2025
+Database Implementation:
+
+Author: Microsoft
+Link: Working with SQL in ASP.NET Core
+Date Accessed: 08 May 2025
+LINQ Implementation:
+
+Author: Grant Riordan
+Link: How to Use LINQ
+Date Accessed: 08 May 2025
+Exception Handling:
