@@ -282,7 +282,7 @@ The application uses the following primary database tables:
    - Create new controller classes in the `Controllers` folder
    - Add new views in the `Views` folder
 
-## Code Attribution
+## Code Attribution Used
 
 ### Microsoft Identity Integration
 - **Author**: Andy Malone MVP
